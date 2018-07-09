@@ -21,7 +21,7 @@ sourceCompatibility = '1.6'
 targetCompatibility = '1.6'
 
 
-group = 'de.felixschulze.gradle'
+group = 'vezeeta.gradle'
 
 ext.archivesBaseName = 'gradle-hockeyapp-plugin'
 ext.isSnapshot = version.endsWith("-SNAPSHOT")
@@ -93,7 +93,7 @@ uploadArchives {
             beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
         }
         name = 'mavenCentralReleaseDeployer'
-        repository(url: 'https://oss.sonatype.org/service/local/staging/deploy/maven2/') {
+        repository(url: 'https://www.myget.org/F/vezeeta/auth/70050757-2986-42d1-aa4b-da0897fdc13f/maven/') {
             authentication(userName: sonatypeUsername, password: sonatypePassword)
             releases(updatePolicy: 'always')
             snapshots(updatePolicy: 'always')
